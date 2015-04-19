@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="position:sticky pollyfill PoC">
+  <meta charset="utf-8">
+  <title>RAF sticky</title>
+  <style>
+    #container {
+      height: 3000px;
+    }
+
+    #sticky-parent {
+      height: 500px;
+      margin-top: 200px;
+      border-bottom: 1px solid grey;
+    }
+
+    #sticky {
+      top: 50px;
+      background-color: #3D6A86;
+      width: 250px;
+      height: 250px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div id="sticky-parent">
+    <div id="sticky">hi</div>
+  </div>
+</div>
+<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+<script type="module">
+  import Sticky from './sticky.js';
+  const sticky = new Sticky('#sticky');
+</script>
+</body>
+</html>
